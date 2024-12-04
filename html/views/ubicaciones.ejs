@@ -1,0 +1,79 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>Ubicaciones - Salud y Bienestar</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="/assets/css/main.css" />
+    <noscript><link rel="stylesheet" href="/assets/css/noscript.css" /></noscript>
+</head>
+<body class="index is-preload">
+    <div id="page-wrapper">
+
+        <!-- Header -->
+        <%- include('partials/header'); %>
+
+        <!-- Main -->
+        <article id="main">
+            <header class="special container">
+                <h2>Encuentra nuestras <strong>Ubicaciones</strong></h2>
+                <p>Ubicaciones de nuestras tiendas y sucursales para servirte mejor.</p>
+            </header>
+
+            <!-- Supermercados -->
+            <section class="wrapper style2 container special">
+                <header>
+                    <h2>Nuestros <strong>Supermercados</strong></h2>
+                    <p>Explora los supermercados Salud y Bienestar disponibles en diversas regiones.</p>
+                </header>
+                <div class="row gtr-50">
+                    <% if (supermercados && supermercados.length > 0) { %>  <!-- Verifica si hay supermercados -->
+                        <% supermercados.forEach(supermercado => { %>
+                            <div class="col-6 col-12-narrower">
+                                <section>
+                                    <header>
+                                        <h3><%= supermercado.nombre %></h3>
+                                    </header>
+                                    <p><strong>Ubicación:</strong> <%= supermercado.ubicacion %></p>
+                                </section>
+                            </div>
+                        <% }); %>
+                    <% } else { %>
+                        <p>No se encontraron supermercados.</p>  <!-- Mensaje si no hay supermercados -->
+                    <% } %>
+                </div>
+            </section>
+
+            <!-- Sucursales -->
+            <section class="wrapper style2 container special-alt">
+                <header>
+                    <h2>Nuestras <strong>Sucursales</strong></h2>
+                    <p>Encuentra nuestras sucursales en ubicaciones clave para tu conveniencia.</p>
+                </header>
+                <div class="row gtr-50">
+                    <% if (sucursales && sucursales.length > 0) { %>  <!-- Verifica si hay sucursales -->
+                        <% sucursales.forEach(sucursal => { %>
+                            <div class="col-6 col-12-narrower">
+                                <section>
+                                    <header>
+                                        <h3><%= sucursal.nombre %></h3>
+                                    </header>
+                                    <p><strong>Ubicación:</strong> <%= sucursal.ubicacion %></p>
+                                </section>
+                            </div>
+                        <% }); %>
+                    <% } else { %>
+                        <p>No se encontraron sucursales.</p>  <!-- Mensaje si no hay sucursales -->
+                    <% } %>
+                </div>
+            </section>
+        </article>
+
+        <!-- Footer -->
+        <%- include('partials/footer'); %>
+
+    </div>
+    <script src="/assets/js/jquery.min.js"></script>
+    <script src="/assets/js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<title>Recetas & Blog - Salud y Bienestar</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<noscript><link rel="stylesheet" href="/assets/css/noscript.css" /></noscript>
+</head>
+<body class="index is-preload">
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<%- include('partials/header'); %>
+
+		<!-- Main -->
+		<article id="main">
+			<header class="special container">
+				<h2>Nuestras <strong>Recetas y Consejos</strong></h2>
+				<p>Descubre ideas para tus comidas y consejos para una vida saludable.</p>
+			</header>
+
+			<section class="wrapper style2 container special-alt">
+				<div class="row gtr-50">
+					<% recetas.forEach(receta => { %>
+						<div class="col-6 col-12-narrower">
+							<section>
+								<header>
+									<h3><%= receta.nombre %></h3>
+								</header>
+								<p><strong>Ingredientes:</strong> <%= receta.ingredientes %></p>
+								<p><strong>Pasos:</strong> <%= receta.pasos %></p>
+							</section>
+						</div>
+					<% }); %>
+				</div>
+			</section>
+		</article>
+
+		<!-- Footer -->
+		<%- include('partials/footer'); %>
+
+	</div>
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/main.js"></script>
+</body>
+</html>

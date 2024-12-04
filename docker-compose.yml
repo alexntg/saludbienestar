@@ -1,0 +1,28 @@
+services:
+  nginx:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "80:80"
+    volumes:
+      - ./html:/usr/share/nginx/html
+    depends_on:
+      - mariadb
+
+  mariadb:
+    image: mariadb:11.6.2
+    container_name: mariadb
+    environment:
+      MYSQL_ROOT_PASSWORD: rootpassword
+      MYSQL_DATABASE: salud_bienestar
+      MYSQL_USER: usuario
+      MYSQL_PASSWORD: password
+    ports:
+      - "3306:3306"
+    volumes:
+      - mariadb_data:/var/lib/mysql
+      - ./db-init:/docker-entrypoint-initdb.d
+
+volumes:
+  mariadb_data:

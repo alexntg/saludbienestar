@@ -1,0 +1,47 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<title>Productos - Salud y Bienestar</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<noscript><link rel="stylesheet" href="/assets/css/noscript.css" /></noscript>
+</head>
+<body class="index is-preload">
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<%- include('partials/header'); %>
+
+		<!-- Main -->
+		<article id="main">
+			<header class="special container">
+				<h2>Productos <strong><%= categoria %></strong></h2>
+				<p>Encuentra los mejores productos en esta categoría.</p>
+			</header>
+
+			<section class="wrapper style2 container special-alt">
+				<div class="row gtr-50">
+					<% productos.forEach(producto => { %>
+						<div class="col-6 col-12-narrower">
+							<section>
+								<header>
+									<h3><%= producto.nombre %></h3>
+								</header>
+								<p><strong>Precio:</strong> $<%= producto.precio %></p>
+								<p><% if (producto.oferta) { %> ¡En oferta! <% } %></p>
+							</section>
+						</div>
+					<% }); %>
+				</div>
+			</section>
+		</article>
+
+		<!-- Footer -->
+		<%- include('partials/footer'); %>
+
+	</div>
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/main.js"></script>
+</body>
+</html>

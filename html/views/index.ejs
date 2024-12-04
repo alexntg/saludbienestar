@@ -1,0 +1,126 @@
+<!DOCTYPE HTML>
+<html lang="es">
+<head>
+    <title>Supermercado y Bienestar</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="/assets/css/main.css" />
+    <noscript><link rel="stylesheet" href="/assets/css/noscript.css" /></noscript>
+</head>
+<body class="index is-preload">
+
+<div id="page-wrapper">
+
+    <!-- Header -->
+    <header id="header" class="alt">
+        <h1 id="logo"><a href="/">Supermercado <span>y Bienestar</span></a></h1>
+        <nav id="nav">
+            <ul>
+                <li class="current"><a href="/">Home</a></li>
+                <li><a href="/contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Banner -->
+    <section id="banner">
+        <div class="inner">
+            <header>
+                <h2>Bienvenidos a nuestro supermercado</h2>
+            </header>
+            <p>Descubre nuestras promociones, productos y más...</p>
+            <footer>
+                <ul class="buttons stacked">
+                    <li><a href="#main" class="button fit scrolly">Ver más</a></li>
+                </ul>
+            </footer>
+        </div>
+    </section>
+
+    <!-- Supermercados -->
+    <section id="supermercados">
+        <header>
+            <h2>Supermercados</h2>
+        </header>
+        <ul>
+            <% if (supermercados && supermercados.length > 0) { %>
+                <% supermercados.forEach(function(supermarket) { %>
+                    <li><strong><%= supermarket.nombre %></strong>: <%= supermarket.ubicacion %></li>
+                <% }); %>
+            <% } else { %>
+                <li>No se encontraron supermercados.</li>
+            <% } %>
+        </ul>
+    </section>
+
+    <!-- Directivos -->
+    <section id="directivos">
+        <header>
+            <h2>Equipo Directivo</h2>
+        </header>
+        <ul>
+            <% if (directivos && directivos.length > 0) { %>
+                <% directivos.forEach(function(directivo) { %>
+                    <li><strong><%= directivo.nombre %></strong> - <%= directivo.cargo %></li>
+                <% }); %>
+            <% } else { %>
+                <li>No se encontraron directivos.</li>
+            <% } %>
+        </ul>
+    </section>
+
+    <!-- Productos -->
+    <section id="products">
+        <header>
+            <h2>Productos y Ofertas</h2>
+        </header>
+        <ul>
+            <% if (products && products.length > 0) { %>
+                <% products.forEach(function(product) { %>
+                    <li><strong><%= product.nombre %></strong> - <%= product.precio %> - <%= product.oferta ? 'En oferta' : 'Sin oferta' %></li>
+                <% }); %>
+            <% } else { %>
+                <li>No se encontraron productos.</li>
+            <% } %>
+        </ul>
+    </section>
+
+    <!-- CTA Section -->
+    <section id="cta">
+        <header>
+            <h2>¿Listo para comprar?</h2>
+            <p>Explora nuestras ofertas y productos especiales.</p>
+        </header>
+        <footer>
+            <ul class="buttons">
+                <li><a href="#" class="button primary">Compra Ahora</a></li>
+                <li><a href="#" class="button">Ver más ofertas</a></li>
+            </ul>
+        </footer>
+    </section>
+
+    <!-- Footer -->
+    <footer id="footer">
+        <ul class="icons">
+            <li><a href="#" class="icon brands circle fa-twitter"><span class="label">Twitter</span></a></li>
+            <li><a href="#" class="icon brands circle fa-facebook-f"><span class="label">Facebook</span></a></li>
+        </ul>
+        <ul class="copyright">
+            <li>&copy; Supermercado y Bienestar. Diseño por <a href="http://html5up.net">HTML5 UP</a></li>
+        </ul>
+    </footer>
+
+</div>
+
+<!-- Scripts -->
+<script src="/assets/js/jquery.min.js"></script>
+<script src="/assets/js/jquery.dropotron.min.js"></script>
+<script src="/assets/js/jquery.scrolly.min.js"></script>
+<script src="/assets/js/jquery.scrollex.min.js"></script>
+<script src="/assets/js/browser.min.js"></script>
+<script src="/assets/js/breakpoints.min.js"></script>
+<script src="/assets/js/util.js"></script>
+<script src="/assets/js/main.js"></script>
+
+</body>
+</html>

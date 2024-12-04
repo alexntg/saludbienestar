@@ -1,0 +1,48 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<title>La Directiva - Salud y Bienestar</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<noscript><link rel="stylesheet" href="/assets/css/noscript.css" /></noscript>
+</head>
+<body class="index is-preload">
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<%- include('partials/header'); %>
+
+		<!-- Main -->
+		<article id="main">
+			<header class="special container">
+				<h2>Conoce a nuestra <strong>Directiva</strong></h2>
+				<p>El equipo de liderazgo detrás de nuestro éxito continuo.</p>
+			</header>
+
+			<section class="wrapper style2 container special-alt">
+				<div class="row gtr-50">
+					<% empleados.forEach(empleado => { %>
+						<div class="col-6 col-12-narrower">
+							<section>
+								<header>
+									<h3><%= empleado.nombre %></h3>
+								</header>
+								<p><strong>Cargo:</strong> <%= empleado.cargo %></p>
+								<p><strong>Email:</strong> <%= empleado.email %></p>
+								<p><strong>Teléfono:</strong> <%= empleado.telefono %></p>
+							</section>
+						</div>
+					<% }); %>
+				</div>
+			</section>
+		</article>
+
+		<!-- Footer -->
+		<%- include('partials/footer'); %>
+
+	</div>
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/main.js"></script>
+</body>
+</html>
