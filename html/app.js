@@ -4,10 +4,10 @@ const app = express();
 
 // Configuración de la base de datos
 const db = mysql.createConnection({
-    host: 'localhost',
+    host: 'mariadb',
     user: 'root',
     password: 'rootpassword',
-    database: 'salud_bienestar',
+    database: 'saludbienestar',
 });
 
 // Configurar EJS

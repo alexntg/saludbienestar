@@ -1,0 +1,22 @@
+2024/12/09 19:32:34 [emerg] 1#1: unexpected end of file, expecting ";" or "}" in /etc/nginx/nginx.conf:2
+2024/12/09 20:25:12 [emerg] 1#1: host not found in upstream "node" in /etc/nginx/conf.d/default.conf:18
+2024/12/09 20:25:13 [emerg] 1#1: host not found in upstream "node" in /etc/nginx/conf.d/default.conf:18
+2024/12/09 20:25:13 [emerg] 1#1: host not found in upstream "node" in /etc/nginx/conf.d/default.conf:18
+2024/12/09 20:25:14 [emerg] 1#1: host not found in upstream "node" in /etc/nginx/conf.d/default.conf:18
+2024/12/09 20:25:15 [emerg] 1#1: host not found in upstream "node" in /etc/nginx/conf.d/default.conf:18
+2024/12/09 20:25:17 [emerg] 1#1: host not found in upstream "node" in /etc/nginx/conf.d/default.conf:18
+2024/12/09 20:25:20 [emerg] 1#1: host not found in upstream "node" in /etc/nginx/conf.d/default.conf:18
+2024/12/09 20:25:27 [emerg] 1#1: host not found in upstream "node" in /etc/nginx/conf.d/default.conf:18
+2024/12/09 20:25:43 [emerg] 1#1: host not found in upstream "node" in /etc/nginx/conf.d/default.conf:18
+2024/12/09 20:25:43 [emerg] 1#1: host not found in upstream "node" in /etc/nginx/conf.d/default.conf:18
+2024/12/09 20:25:43 [emerg] 1#1: host not found in upstream "node" in /etc/nginx/conf.d/default.conf:18
+2024/12/09 20:25:44 [emerg] 1#1: host not found in upstream "node" in /etc/nginx/conf.d/default.conf:18
+2024/12/09 20:25:45 [emerg] 1#1: host not found in upstream "node" in /etc/nginx/conf.d/default.conf:18
+2024/12/09 20:25:47 [emerg] 1#1: host not found in upstream "node" in /etc/nginx/conf.d/default.conf:18
+2024/12/09 20:25:50 [emerg] 1#1: host not found in upstream "node" in /etc/nginx/conf.d/default.conf:18
+2024/12/09 20:25:57 [emerg] 1#1: host not found in upstream "node" in /etc/nginx/conf.d/default.conf:18
+2024/12/09 20:26:10 [emerg] 1#1: host not found in upstream "node" in /etc/nginx/conf.d/default.conf:18
+2024/12/09 20:27:48 [error] 20#20: *1 connect() failed (111: Connection refused) while connecting to upstream, client: 172.18.0.1, server: localhost, request: "GET / HTTP/1.1", upstream: "http://172.18.0.3:3000/", host: "localhost"
+2024/12/09 20:27:48 [error] 20#20: *1 open() "/usr/share/nginx/html/50x.html" failed (2: No such file or directory), client: 172.18.0.1, server: localhost, request: "GET / HTTP/1.1", upstream: "http://172.18.0.3:3000/", host: "localhost"
+2024/12/09 20:28:38 [error] 21#21: *1 connect() failed (113: Host is unreachable) while connecting to upstream, client: 172.18.0.1, server: localhost, request: "GET / HTTP/1.1", upstream: "http://172.18.0.3:3000/", host: "localhost"
+2024/12/09 20:28:38 [error] 21#21: *1 open() "/usr/share/nginx/html/50x.html" failed (2: No such file or directory), client: 172.18.0.1, server: localhost, request: "GET / HTTP/1.1", upstream: "http://172.18.0.3:3000/", host: "localhost"

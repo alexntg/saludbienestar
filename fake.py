@@ -7,12 +7,12 @@ fake = Faker('es_ES')
 
 # Configuración de la conexión a la base de datos
 db_config = {
-    'host': 'localhost',
-    'user': 'usuario',  # Cambia este valor
-    'password': 'password',  # Cambia este valor
-    'database': 'salud_bienestar',  # Nombre de la base de datos
-    'charset': 'utf8mb4',  # Usar utf8mb4
-    'collation': 'utf8mb4_general_ci'  # Cambiar la collation
+    'host': 'mariadb',
+    'user': 'saludbienestar',
+    'password': 'securepassword',
+    'database': 'saludbienestar',
+    'charset': 'utf8mb4',
+    'collation': 'utf8mb4_general_ci'
 }
 
 # Lista de cargos limitados para empleados de supermercado y directivos

@@ -1,28 +1,64 @@
+version: '3.8'
+
 services:
-  nginx:
-    build:
+  # Node.js application service
+  app:
+    build: 
       context: .
       dockerfile: Dockerfile
-    ports:
-      - "80:80"
-    volumes:
-      - ./html:/usr/share/nginx/html
+    container_name: salud-bienestar-app
+    restart: unless-stopped
+    environment:
+      - NODE_ENV=production
+      - DB_HOST=mariadb
+      - DB_PORT=3306
+      - DB_USER=saludbienestar
+      - DB_PASSWORD=securepassword
+      - DB_NAME=saludbienestar
     depends_on:
       - mariadb
+    networks:
+      - app-network
 
-  mariadb:
-    image: mariadb:11.6.2
-    container_name: mariadb
-    environment:
-      MYSQL_ROOT_PASSWORD: rootpassword
-      MYSQL_DATABASE: salud_bienestar
-      MYSQL_USER: usuario
-      MYSQL_PASSWORD: password
+  # Nginx service
+  nginx:
+    image: nginx:1.25-alpine
+    container_name: salud-bienestar-nginx
+    restart: unless-stopped
     ports:
-      - "3306:3306"
+      - "80:80"
+      - "443:443"
     volumes:
-      - mariadb_data:/var/lib/mysql
-      - ./db-init:/docker-entrypoint-initdb.d
+      - ./nginx/nginx.conf:/etc/nginx/nginx.conf:ro
+      - ./nginx/default.conf:/etc/nginx/conf.d/default.conf:ro
+      - ./html:/usr/share/nginx/html
+      - ./logs:/var/log/nginx
+    depends_on:
+      - app
+    networks:
+      - app-network
 
+  # MariaDB service
+  mariadb:
+    image: mariadb:10.11
+    container_name: salud-bienestar-db
+    restart: unless-stopped
+    environment:
+      - MARIADB_ROOT_PASSWORD=rootpassword
+      - MARIADB_DATABASE=saludbienestar
+      - MARIADB_USER=saludbienestar
+      - MARIADB_PASSWORD=securepassword
+    volumes:
+      - mariadb-data:/var/lib/mysql
+      - ./db-init:/docker-entrypoint-initdb.d
+    networks:
+      - app-network
+
+# Persistent volume for MariaDB data
 volumes:
-  mariadb_data:
+  mariadb-data:
+
+# Network for inter-container communication
+networks:
+  app-network:
+    driver: bridge
