@@ -1,0 +1,10 @@
+filebeat.inputs:
+  - type: docker
+    containers.ids: '*'
+    # O si prefieres especificar los contenedores por nombre o id:
+    # containers.ids: ['container_id_1', 'container_id_2']
+
+# Output a Logstash
+output.logstash:
+  hosts: ["logstash:5044"]
+
