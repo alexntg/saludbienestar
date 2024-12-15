@@ -19,3 +19,8 @@ yarn-error.log
 # Ignorar carpetas de compilación
 /dist
 /build
+
+# Ignorar el entorno virtual de Python
+venv/
+__pycache__/
+*.pyc
