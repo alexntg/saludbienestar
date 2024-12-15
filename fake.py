@@ -7,7 +7,7 @@ fake = Faker('es_ES')
 
 # Configuración de la conexión a la base de datos
 db_config = {
-    'host': 'mariadb',
+    'host': '172.18.0.5',
     'user': 'saludbienestar',
     'password': 'securepassword',
     'database': 'saludbienestar',

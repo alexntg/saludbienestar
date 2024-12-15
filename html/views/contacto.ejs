@@ -1,0 +1,70 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>Contacto - Salud y Bienestar</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="/assets/css/main.css" />
+    <noscript><link rel="stylesheet" href="/assets/css/noscript.css" /></noscript>
+</head>
+<body class="index is-preload">
+    <div id="page-wrapper">
+
+        <!-- Header -->
+        <%- include('partials/header'); %>
+
+        <!-- Main -->
+        <article id="main">
+            <header class="special container">
+                <h2>Contacto</h2>
+                <p>¿Tienes alguna sugerencia o queja? Por favor, completa el formulario a continuación y envíanos tu opinión.</p>
+            </header>
+
+            <section class="wrapper style2 container special-alt">
+                <div class="row gtr-50">
+                    <div class="col-6 col-12-narrower">
+                        <section>
+                            <header>
+                                <h3>Formulario de Contacto</h3>
+                            </header>
+
+                            <form action="/contacto" method="POST">
+                                <div class="field">
+                                    <label for="name">Nombre:</label>
+                                    <input type="text" name="name" id="name" required placeholder="Introduce tu nombre" />
+                                </div>
+                                <div class="field">
+                                    <label for="email">Correo Electrónico:</label>
+                                    <input type="email" name="email" id="email" required placeholder="Introduce tu correo electrónico" />
+                                </div>
+                                <div class="field">
+                                    <label for="supermercado">Supermercado:</label>
+                                    <select name="supermercado" id="supermercado">
+                                        <option value="">Seleccionar (opcional)</option>
+                                        <% supermercados.forEach(supermercado => { %>
+                                            <option value="<%= supermercado.id %>"><%= supermercado.nombre %></option>
+                                        <% }) %>
+                                    </select>
+                                </div>
+                                <div class="field">
+                                    <label for="mensaje">Sugerencia o Queja:</label>
+                                    <textarea name="mensaje" id="mensaje" rows="5" required placeholder="Escribe tu mensaje aquí"></textarea>
+                                </div>
+                                <div class="field">
+                                    <button type="submit" class="button">Enviar</button>
+                                </div>
+                            </form>
+                        </section>
+                    </div>
+                </div>
+            </section>
+        </article>
+
+        <!-- Footer -->
+        <%- include('partials/footer'); %>
+
+    </div>
+    <script src="/assets/js/jquery.min.js"></script>
+    <script src="/assets/js/main.js"></script>
+</body>
+</html>

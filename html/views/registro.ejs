@@ -1,0 +1,72 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<title>Registro - Salud y Bienestar</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<noscript><link rel="stylesheet" href="/assets/css/noscript.css" /></noscript>
+</head>
+<body class="index is-preload">
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<%- include('partials/header'); %>
+
+		<!-- Main -->
+		<article id="main">
+			<header class="special container">
+				<h2>Registro</h2>
+				<p>Por favor, completa el siguiente formulario para registrarte en Salud y Bienestar.</p>
+			</header>
+
+			<section class="wrapper style2 container special-alt">
+				<div class="row gtr-50">
+					<div class="col-6 col-12-narrower">
+						<section>
+							<header>
+								<h3>Formulario de Registro</h3>
+							</header>
+
+							<% if (errors && errors.length > 0) { %>
+								<div class="alert alert-danger">
+									<ul>
+										<% errors.forEach(error => { %>
+											<li><%= error.msg %></li>
+										<% }) %>
+									</ul>
+								</div>
+							<% } %>
+							
+							<form action="/register" method="POST">
+								<div class="field">
+									<label for="email">Correo Electrónico:</label>
+									<input type="email" name="email" id="email" required placeholder="Introduce tu correo electrónico" />
+								</div>
+								<div class="field">
+									<label for="password">Contraseña:</label>
+									<input type="password" name="password" id="password" required placeholder="Introduce tu contraseña" />
+								</div>
+								<div class="field">
+									<label for="ofertas">¿Deseas recibir ofertas al correo?</label>
+									<input type="checkbox" name="ofertas" id="ofertas" />
+								</div>
+								<div class="field">
+									<button type="submit" class="button">Registrar</button>
+								</div>
+							</form>
+							
+						</section>
+					</div>
+				</div>
+			</section>
+		</article>
+
+		<!-- Footer -->
+		<%- include('partials/footer'); %>
+
+	</div>
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/main.js"></script>
+</body>
+</html>
